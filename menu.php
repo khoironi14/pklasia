@@ -13,7 +13,7 @@
           <a class="nav-link" href="view_data.php">Mahasiswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="fakultas.php">Fakultas</a>
+          <a class="nav-link" href="view_fakultas.php">Fakultas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
