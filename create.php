@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-</head>
-<body>
-	<div class="container">
+
+
+	
 		<div class="col-md-6">
-			
+			<form action="savedata.php" method="post"> 	
+			<div class="	card">
+					<div class="	card-body">
+
 					<div class="form-group">
 					<label>Nim</label>
 					<input type="text" name="nim" id="nim"  class="form-control nim" >
@@ -35,38 +31,12 @@
 				<div class="form-group">
 					<button class="btn btn-success" id="btn">Simpan</button>
 				</div>
+				</form>
 			
 		</div>
 	</div>
 
-</body>
-</html>
+
+						</div>
+				</div>
 <script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		let html='';
-		$('#btn').click(function(){
-			let nim=$('#nim').val();
-			let nama=$('#nama').val();
-		if(nim=="" ){
-			alert("Nim  Wajib diisi");
-		}
-		if(nama==""){
-			
-			html='wajib diisi';
-			$('#keterangan').html(html);
-		}
-
-		});
-		$('#fakultas').change(function(){
-
-			let fakultas=$('#fakultas').val();
-			alert(fakultas);
-		});
-		$('#nim').keyup(function(){
-			let nim1=$('#nim').val();
-			alert(nim1);
-		})
-		
-	})
-</script>

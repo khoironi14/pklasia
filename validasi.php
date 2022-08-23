@@ -9,7 +9,7 @@ if ($cek->num_rows >0) {
 	$_SESSION['role']=$data['role'];
 	 $_SESSION['username']=$data['nama'];
 	
-	header('location:view_data.php');
+	header('location:dashboard.php?menu=home');
 }else{
 
 	$_SESSION['keterangan']='<div class="alert alert-danger" role="alert">

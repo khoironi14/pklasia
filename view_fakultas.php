@@ -40,6 +40,7 @@
       </div>
       <div class="modal-body">
        <div class="container">
+       	<input type="hidden" name="id" id="id">
        	<div class="form-group">
        		<label>Fakultas</label>
        		<input type="text" name="fakultas" id="fakultas" class="form-control">
@@ -84,7 +85,7 @@
 					html +=`<tr>
 					<td>${no++}</td>
 					<td>${data[i].nama_fakultas}</td>
-					<td><a href='#' onclick="edit(${data[i].id_fakultas})" >edit</a></td>
+					<td><a href='#' onclick="edit(${data[i].id_fakultas})" class="btn btn-info btn-sm">edit</a> <a href='' onclick="hapus(${data[i].id_fakultas})">Hapus</a></td>
 					</tr>`;
 
 				});
@@ -100,12 +101,13 @@
 	}
 	function simpan(){
 		let fakultas=$('#fakultas').val();
+		let id=$('#id').val();
 		$.ajax({
 
 			url:"save_fakultas.php",
 
 			type:"post",
-			data:{fakultas:fakultas},
+			data:{fakultas:fakultas,id:id},
 			success:function(data){
 				alert(data);
 				$('#modal-add').modal('hide');
@@ -121,10 +123,25 @@
 			success:function(data){
 				
 				$('#fakultas').val(data.nama_fakultas);
+				$('#id').val(data.id_fakultas);
 
 				$('#modal-add').modal('show');
 			}
 		})
 		
+	}
+	function hapus(id){
+
+		$.ajax({
+
+			url:"hapus_fakultas.php?id="+id,
+			type:"get",
+			dataType:"json",
+			success:function(data){
+				alert(data);
+				tampildata();
+
+			}
+		})
 	}
 </script>
